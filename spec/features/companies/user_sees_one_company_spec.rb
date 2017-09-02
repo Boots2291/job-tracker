@@ -2,12 +2,11 @@ require 'rails_helper'
 
 describe "User sees one company" do
   scenario "a user sees a company" do
-    company = Company.create!(name: "ESPN")
-    company.jobs.create!(title: "Developer", level_of_interest: 90, city: "Denver")
+    job = create(:job)
 
-    visit company_path(company)
+    visit company_path(job["company_id"])
 
-    expect(current_path).to eq("/companies/#{company.id}/jobs")
+    expect(current_path).to eq("/companies/#{job["company_id"]}/jobs")
     expect(page).to have_content("ESPN")
     expect(page).to have_content("Developer")
   end

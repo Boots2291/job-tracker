@@ -2,16 +2,15 @@ require 'rails_helper'
 
 describe "User deletes a specific job" do
   scenario "a user deletes a specific job" do
-    company = Company.create!(name: "ESPN")
-    job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
-    job2 = company.jobs.create!(title: "QA", level_of_interest: 50, city: "Boulder")
+    job = create(:job)
+    job2 = create(:job)
 
-    visit company_jobs_path(company)
-    click_on "Developer"
+    visit company_jobs_path(job.company)
+    click_on "Developer1"
     click_on "Delete"
 
     expect(page).to have_content("ESPN")
-    expect(page).to_not have_content("Developer")
-    expect(page).to have_content("QA")
+    expect(page).to_not have_content("Developer1")
+    expect(page).to have_content("Developer2")
   end
 end

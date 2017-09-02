@@ -1,16 +1,17 @@
 require 'rails_helper'
 
-describe "User creates a new job" do
-  scenario "a user can create a new job" do
+describe "User adds a category to a job" do
+  scenario "when creating a new job" do
     company = create(:company)
-    cateogry = create(:category)
-
+    create(:category)
     visit new_company_job_path(company)
+
     fill_in "job[title]", with: "Developer"
     fill_in "job[description]", with: "So fun!"
     fill_in "job[level_of_interest]", with: 80
     fill_in "job[city]", with: "Denver"
-    select "Web Development", from: "job_category_id"
+    select('Web Development')
+
     click_button "Create"
 
     expect(current_path).to eq("/companies/#{company.id}/jobs/#{Job.last.id}")

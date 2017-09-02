@@ -41,6 +41,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails'
   gem 'database_cleaner'
+  gem 'factory_girl_rails', "~> 4.0"
+  gem 'launchy'
 end
 
 group :development do
