@@ -8,7 +8,7 @@ describe "User sees all jobs" do
     visit company_path(job1.company)
 
     expect(page).to have_content("ESPN")
-    expect(page).to have_content("Developer1")
-    expect(page).to have_content("Developer2")
+    expect(page).to have_content("Developer7")
+    expect(page).to have_content("Developer8")
   end
 end
