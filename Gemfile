@@ -43,6 +43,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails', "~> 4.0"
   gem 'launchy'
+  gem 'will_paginate', '~> 3.1.0'
 end
 
 group :development do

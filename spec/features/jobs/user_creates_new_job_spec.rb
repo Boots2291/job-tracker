@@ -6,6 +6,9 @@ describe "User creates a new job" do
     cateogry = create(:category)
 
     visit new_company_job_path(company)
+
+    expect(page).to have_content("Create New Category")
+    
     fill_in "job[title]", with: "Developer"
     fill_in "job[description]", with: "So fun!"
     fill_in "job[level_of_interest]", with: 80
