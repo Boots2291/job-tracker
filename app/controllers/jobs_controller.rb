@@ -1,7 +1,11 @@
 class JobsController < ApplicationController
   def index
     @company = Company.find(params[:company_id])
-    @jobs = @company.jobs
+    if params[:sort] == 'location'
+      @jobs = @company.jobs.sort_by_city
+    else
+      @jobs = @company.jobs
+    end
   end
 
   def new

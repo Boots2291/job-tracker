@@ -1,8 +1,8 @@
 class ContactsController < ApplicationController
 
   def create
-    @contact = Contact.create(contact_params)
     @company = Company.find(params[:company_id])
+    @contact = @company.contacts.create(contact_params)
     redirect_to company_path(@company)
   end
 

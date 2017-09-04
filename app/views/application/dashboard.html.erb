@@ -1,0 +1,15 @@
+<h4>Jobs by Interest</h4>
+<table class="centered">
+    <tr>
+      <th>Level of Interest</th>
+      <th>Number of Jobs</th>
+    </tr>
+    <% @jobs.each do |interest, count| %>
+    <tr class="level_<%= interest %>">
+      <td><%= interest %></td>
+      <td><%= count %></td>
+    </tr>
+  <% end %>
+</table>
+
+<h4></h4>

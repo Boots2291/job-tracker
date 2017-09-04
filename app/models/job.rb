@@ -3,4 +3,12 @@ class Job < ApplicationRecord
   belongs_to :company
   belongs_to :category
   has_many :comments
+
+  def self.sort_by_city
+    order("city ASC")
+  end
+
+  def self.sort_by_interest
+    group(:level_of_interest).order(level_of_interest: :desc).count
+  end
 end
