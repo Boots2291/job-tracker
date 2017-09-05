@@ -14,10 +14,29 @@
  *= require_self
  */
 body {
-  background-color: grey;
+  background-color: ghostwhite;
   text-align: center;
 }
 
-.container {
-  background-color: ghostwhite;
+ul {
+  list-style: none;
+}
+
+.left {
+  margin-top: 1%;
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+.right {
+  margin-top: 1%;
+  width: 50%;
+  display: inline-block;
+  float: right;
+}
+
+.comments {
+  border: 1px solid black;
+  margin-top: 1px;
 }

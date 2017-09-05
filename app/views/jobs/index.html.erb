@@ -4,6 +4,6 @@ All Jobs for <strong><%= @company.name %></strong>
   <ul><%= link_to job.title, company_job_path(@company, job) %> at <%= job.company.name %></ul>
 <% end %>
 
-
-
-<%= link_to "New Job", new_company_job_path %>
+<a href="?sort=location"><button>Sort by City</button></a>
+<br />
+<button><%= link_to "New Job", new_company_job_path %></button>

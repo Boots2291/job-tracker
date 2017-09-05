@@ -6,13 +6,9 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.job_id = params[:job_id]
-    @job = @comment.job
-    @company = @job.company
+    @job = params[:job_id]
     if @comment.save
-      redirect_to company_job_path(@company, @job)
-    else
-    render :new
+      redirect_to company_job_path(@comment.job)
     end
   end
 
